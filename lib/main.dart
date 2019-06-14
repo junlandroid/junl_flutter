@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'async_await_test.dart';
+import 'tab_bar_page_widget.dart';
 
 void main() => runApp(JunlApp());
 
@@ -26,7 +27,8 @@ class MainPage extends StatelessWidget {
           FlatButton(
               color: Colors.blue,
               onPressed: () {
-                print('tab');
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => TabBarPageWidget()));
               },
               child: Text('顶部Tab')),
           FlatButton(
