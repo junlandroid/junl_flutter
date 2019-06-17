@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
-import 'JunlTabBarWidget.dart';
-import 'JunlTabBarWidget.dart';
-import 'TabBarPageFirstWidget.dart';
+import 'junl_tab_bar_widget.dart';
+import 'tab_bar_page_first.dart';
+import 'tab_bar_page_second.dart';
+import 'tab_bar_page_third.dart';
 
 class TabBarPageWidget extends StatefulWidget {
   @override
@@ -13,11 +14,25 @@ class _TabBarPageWidgetState extends State<TabBarPageWidget> {
   final PageController topPageControl = PageController();
   final List<String> tab = ["HHHHH", "OOOOO", "PPPPP"];
 
+
+  @override
+  void initState() {
+    super.initState();
+    print('initState');
+  }
+
+
+  @override
+  void dispose() {
+    super.dispose();
+    print('dispose');
+  }
+
   _renderPage() {
     return [
       TabBarPageFirstWidget(),
-      TabBarPageFirstWidget(),
-      TabBarPageFirstWidget(),
+      TabBarPageSecondWidget(),
+      TabBarPageThirdWidget(),
     ];
   }
 
@@ -43,9 +58,10 @@ class _TabBarPageWidgetState extends State<TabBarPageWidget> {
       type: JunlTabBarWidget.TOP_TAB,
       backgroundColor: Colors.cyan,
       indicatColor: Colors.red,
-      topPageController: topPageControl,
       tabItems: _renderTab(),
       tabViews: _renderPage(),
+      title: Text('TopTabBar'),
+      topPageController: topPageControl,
     );
   }
 }

@@ -1,16 +1,27 @@
 import 'package:flutter/material.dart';
 
-class TabBarPageFirstWidget extends StatefulWidget {
+class TabBarPageThirdWidget extends StatefulWidget {
   @override
-  _TabBarPageFirstWidgetState createState() => _TabBarPageFirstWidgetState();
+  _TabBarPageThirdWidgetState createState() => _TabBarPageThirdWidgetState();
 }
 
-class _TabBarPageFirstWidgetState extends State<TabBarPageFirstWidget> {
+class _TabBarPageThirdWidgetState extends State<TabBarPageThirdWidget> {
   final _suggestions = <String>[];
   final _biggerFont = const TextStyle(fontSize: 18);
 
   generateWordPairs() {
-    return ["1111", "2222", "3333", "4444", "5555", "6666", "7777", "8888", "9999", "0000"];
+    return [
+      "flutter",
+      "material",
+      "dart",
+      "TabBarPageFirstWidget",
+      "_buildSuggetion",
+      "extends",
+      "fontSize",
+      "EdgeInsets",
+      "TabBarPageFirstWidget",
+      "StatefulWidget",
+    ];
   }
 
   _buildRow(String suggestion) {
@@ -31,7 +42,7 @@ class _TabBarPageFirstWidgetState extends State<TabBarPageFirstWidget> {
         if (index >= _suggestions.length) {
           _suggestions.addAll(generateWordPairs());
         }
-        return _buildRow(_suggestions[i]);
+        return _buildRow(_suggestions[index]);
       },
     );
   }
