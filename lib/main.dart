@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'async_await_test.dart';
 import 'top_tab_bar_widget.dart';
 import 'bottom_tab_bar_widget.dart';
+import 'list_view_test_widget.dart';
 
 void main() => runApp(JunlApp());
 
@@ -23,27 +24,33 @@ class MainPage extends StatelessWidget {
       appBar: AppBar(
         title: Text('Junl'),
       ),
-      body: Column(
-        children: <Widget>[
-          FlatButton(
-              color: Colors.blue,
-              onPressed: () {
-                Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => TabBarPageWidget()));
-              },
-              child: Text('顶部Tab')),
-          FlatButton(
-              color: Colors.blue,
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => BottomTabBarWidget()));
-              },
-              child: Text('底部Tab')),
-          FloatingActionButton(
-            onPressed: null,
-            child: Text('+'),
-          )
-        ],
-      ),
+      body: layout(context),
+    );
+  }
+
+  Widget layout(BuildContext context) {
+    return  Column(
+      children: <Widget>[
+        FlatButton(
+            color: Colors.blue,
+            onPressed: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => TabBarPageWidget()));
+            },
+            child: Text('顶部Tab')),
+        FlatButton(
+            color: Colors.blue,
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => BottomTabBarWidget()));
+            },
+            child: Text('底部Tab')),
+        FloatingActionButton(
+          onPressed: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context) => ListViewTestWidget()));
+          },
+          child: Text('+'),
+        )
+      ],
     );
   }
 }

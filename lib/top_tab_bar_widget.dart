@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'junl_tab_bar_widget.dart';
+import 'tab_bar_page_zero.dart';
 import 'tab_bar_page_first.dart';
 import 'tab_bar_page_second.dart';
 import 'tab_bar_page_third.dart';
@@ -12,7 +13,7 @@ class TabBarPageWidget extends StatefulWidget {
 
 class _TabBarPageWidgetState extends State<TabBarPageWidget> {
   final PageController topPageControl = PageController();
-  final List<String> tab = ["HHHHH", "OOOOO", "PPPPP"];
+  final List<String> tab = ['Zero',"HHHHH", "OOOOO", "PPPPP"];
 
 
   @override
@@ -30,6 +31,7 @@ class _TabBarPageWidgetState extends State<TabBarPageWidget> {
 
   _renderPage() {
     return [
+      TabBarPageZeroWidget(),
       TabBarPageFirstWidget(),
       TabBarPageSecondWidget(),
       TabBarPageThirdWidget(),
