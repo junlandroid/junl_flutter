@@ -30,6 +30,9 @@ class _TabBarPageThirdWidgetState extends State<TabBarPageThirdWidget> {
         suggestion,
         style: _biggerFont,
       ),
+      onTap: (){
+        print('item 点击事件');
+      },
     );
   }
 

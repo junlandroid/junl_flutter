@@ -24,12 +24,15 @@ class _TabBarPageFirstWidgetState extends State<TabBarPageFirstWidget> {
     ];
   }
 
-  _buildRow(String suggestion) {
+  _buildRow(String suggestion, int index) {
     return ListTile(
       title: Text(
         suggestion,
         style: _biggerFont,
       ),
+      onTap: (){
+        print(index);
+      },
     );
   }
 
@@ -42,8 +45,9 @@ class _TabBarPageFirstWidgetState extends State<TabBarPageFirstWidget> {
         if (index >= _suggestions.length) {
           _suggestions.addAll(generateWordPairs());
         }
-        return _buildRow(_suggestions[index]);
+        return _buildRow(_suggestions[index] , index);
       },
+
     );
   }
 

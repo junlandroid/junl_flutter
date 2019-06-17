@@ -30,6 +30,9 @@ class _TabBarPageSecondWidgetState extends State<TabBarPageSecondWidget> {
         suggestion,
         style: _biggerFont,
       ),
+      onTap: (){
+        print('item 点击事件');
+      },
     );
   }
 
