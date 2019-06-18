@@ -25,6 +25,10 @@ dependencies:
   cupertino_icons: ^0.1.2
   fluttertoast: ^2.2.11
   pull_to_refresh: ^1.4.4
+  # Http请求
+  dio: ^2.1.7
+  # json序列化 反序列化
+  json_serializable: ^3.0.0
 
 dev_dependencies:
   flutter_test:
